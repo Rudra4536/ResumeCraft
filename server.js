@@ -10,6 +10,10 @@ const PORT = 3001;
 app.use(cors());
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.send('Backend server is running!');
+});
+
 app.post('/api/generate-ai', async (req, res) => {
   try {
     const { action, payload } = req.body;
